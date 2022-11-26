@@ -12,6 +12,7 @@ import coffeeWithMilk from './cafe-com-leite.png';
 import icedCoffee from './cafe-gelado.png';
 import hotChocolate from './chocolate-quente.png';
 import creamyExpress from './expresso-cremoso.png';
+import homeBackground from './background.png'
 
 export {
     american,
@@ -27,5 +28,6 @@ export {
     coffeeWithMilk,
     icedCoffee,
     hotChocolate,
-    creamyExpress
+    creamyExpress,
+    homeBackground
 }   

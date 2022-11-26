@@ -1,5 +1,5 @@
 import styled from "styled-components";
-
+import { TextTitle } from "../../components/TextStyles";
 
 export const HomeContainer = styled.main`
     padding: 5.875rem 0;
@@ -8,23 +8,19 @@ export const HomeContainer = styled.main`
     justify-content: space-between;
     align-items: center;
 
-    h1 {
-        font-family: 'Baloo 2', cursive;
-        font-weight: 800;
-        font-size: 3rem;
-        color: ${props => props.theme["gray-900"]};
-        line-height: 1.3;
-        margin-bottom: 1rem;
-    }
-
     span {
         font-size: 1.25rem;
-        color: ${props => props.theme["gray-800"]};
+        color: ${props => props.theme.colors["base-text"]};
         line-height: 1.3;
     }
 `
 
-export const StatsContainer = styled.section`
+export const HomeTitle = styled(TextTitle)`
+    margin-bottom: 1rem;
+`
+
+
+export const StatsBox = styled.section`
     margin-top: 4.125rem;
     display: flex;
     gap: 2.5rem;
@@ -46,4 +42,12 @@ export const StatsContainer = styled.section`
         }
     }
 
+`
+
+export const StatsContainer = styled.div`
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 1.25rem;
+    margin-top: 4.125rem;
 `

@@ -1,2 +1,0 @@
-// Implementar na nome do empresário um "feed" com fotos do estabelecimento e infos padrão e no perfil da empresa, apresentar essas 
-informações ao associado quando clicar em "Ver empresa"

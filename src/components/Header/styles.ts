@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const HeaderContainer = styled.header`
 display: flex;
@@ -8,37 +8,38 @@ padding: 2rem 0;
 
 nav {
     display: flex;
-    gap: 0.875rem;
+    gap: 0.75rem;
     align-items: center;
+}
+`
+interface HeaderNavigationProps {
+    variant: "yellow" | "purple"
+}
 
-    div {
+
+export const HeaderNavigation = styled.button<HeaderNavigationProps>`
         display: flex;
         gap: 4px;
         align-items: center;
-        background: ${props => props.theme["purple-300"]};
-        color: ${props => props.theme["purple-700"]};
         padding: 0.5rem;
         border-radius: 8px;
-        display: flex;
-        align-items: center;
+        position: relative;
         justify-content: center;
-        font-size: 0.875rem;
+        height: 2.375rem;
+        font-size: ${props => props.theme.textSizes["text-regular-sm"]};
+        border: none;
 
-        svg {
-        color: ${props => props.theme["purple-500"]}
-    }
-    }
-    
-    
-    a {
-        background: ${props => props.theme["yellow-300"]};
-        color: ${props => props.theme["yellow-700"]};
-        padding: 0.5rem;
-        border-radius: 8px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: 0.2s ease-in;
-    }
-}
+        ${({ theme, variant }) => css`
+            background: ${theme.colors[`brand-${variant}-light`]};
+            color: ${theme.colors[`brand-${variant}-dark`]};
+
+        `} 
+
+        ${({ theme, variant }) => 
+        variant == 'purple' && 
+        css`
+            svg {
+                color: ${theme.colors["brand-purple"]};
+            }
+        `} 
 `

@@ -14,6 +14,16 @@ export function CardCoffee({ content, name, img, value, tags}:CardCoffeeProps ) 
 
     const [ quantityProducts, setQuantityProducts ] = useState(0);
 
+    function handleIncrementItem() {
+        setQuantityProducts(quantityProducts + 1)
+    }
+
+    function handleDecreaseItem() {
+        if(quantityProducts > 0) {
+            setQuantityProducts(quantityProducts - 1)
+        } return 
+    }
+
     return (
         <CardContainer>
             <img src={img} alt="" />
@@ -37,12 +47,12 @@ export function CardCoffee({ content, name, img, value, tags}:CardCoffeeProps ) 
                 </ValueCard>
                 <div>
                     <IncrementOrDecrease>
-                        <Minus size={14} weight='bold' />
+                        <Minus onClick={handleDecreaseItem} size={14} weight='bold' />
                         <span>{quantityProducts}</span>
-                        <Plus size={14} weight='bold' />
+                        <Plus onClick={handleIncrementItem} size={14} weight='bold' />
                     </IncrementOrDecrease>
 
-                    <button>
+                    <button >
                         <ShoppingCart weight="fill" size={22} />
                     </button>
                 </div>

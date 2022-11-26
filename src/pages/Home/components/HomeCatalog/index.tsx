@@ -1,4 +1,4 @@
-import { CardCoffee } from "../../../../components/CardCoffee";
+import { CardCoffee } from "../CardCoffee";
 import { CardGrid, CatalogContainer } from "./styles";
 import { products } from "../../../../constants"
 

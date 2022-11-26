@@ -11,7 +11,7 @@ export const IconContainer = styled.div<IconContainerProps>`
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    color: ${props => props.theme.white};
+    color: ${props => props.theme.colors["base-white"]};
 
     ${props => {
         return `background-color: ${IconVariants[props.variantColor]}`

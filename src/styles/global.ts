@@ -9,17 +9,25 @@ export const GlobalStyle = createGlobalStyle`
 
 :focus{
     outline: 0;
-    box-shadow: 0 0 0 2px ${(props) => props.theme['yellow-700']};
+    box-shadow: 0 0 0 2px ${(props) => props.theme.colors['brand-yellow-dark']};
 }
 body {
-    background: ${(props) => props.theme['gray-100']};
-    color: ${(props) => props.theme['gray-700']};
+    background: ${(props) => props.theme.colors['base-background']};
+    color: ${(props) => props.theme.colors['base-text']};
     -webkit-font-smoothing: antialiased;
 }
 
+button {
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+}
+
 body, input, textarea, button  {
-    font-family: 'Roboto', sans-serif;
+    font-family: ${props => props.theme.fonts.regular};
     font-weight: 400;
-    font-size: 1rem;
+    font-size: ${props => props.theme.textSizes['text-regular-m']};
 }
 `
