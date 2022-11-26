@@ -1,0 +1,6 @@
+
+export function formatValuePrice(value: number) {
+    return value.toLocaleString("pt-BR", {
+        minimumFractionDigits: 2,
+    })
+}

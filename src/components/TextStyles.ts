@@ -11,7 +11,8 @@ export const TextTitle = styled.h1<TextTitleProps>`
     font-size: ${({theme, size}) => theme.textSizes[`title-title-${size ?? 'md'}`]};
     font-family: ${props => props.theme.fonts.title};
     line-height: 130%;
-    font-weight: ${({weight}) => weight ?? 800}
+    font-weight: ${({weight}) => weight ?? 800}; 
+    
 `   
 
 interface TextRegularProps {

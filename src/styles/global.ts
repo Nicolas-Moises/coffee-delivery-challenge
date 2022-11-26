@@ -7,7 +7,7 @@ export const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
 }
 
-:focus{
+input:focus{
     outline: 0;
     box-shadow: 0 0 0 2px ${(props) => props.theme.colors['brand-yellow-dark']};
 }
@@ -28,6 +28,26 @@ a {
 body, input, textarea, button  {
     font-family: ${props => props.theme.fonts.regular};
     font-weight: 400;
-    font-size: ${props => props.theme.textSizes['text-regular-m']};
+    font-size: ${props => props.theme.textSizes['text-regular-md']};
 }
+
+input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  input[type="number"] {
+    -moz-appearance: textfield;
+  }
+  ::-webkit-scrollbar {
+    width: 0.4rem;
+  }
+  ::-webkit-scrollbar-track {
+    background: ${({ theme }) => theme.colors["base-button"]}
+  }
+  ::-webkit-scrollbar-thumb {
+    border-radius: 2rem;
+    background: ${({ theme }) => theme.colors["base-label"]}
+  }
 `
+

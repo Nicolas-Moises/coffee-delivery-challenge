@@ -1,20 +1,24 @@
 import styled, { css } from "styled-components";
 
 export const HeaderContainer = styled.header`
-display: flex;
-align-items: center;
-justify-content: space-between;
-padding: 2rem 0;
-
-nav {
     display: flex;
-    gap: 0.75rem;
     align-items: center;
-}
-`
-interface HeaderNavigationProps {
-    variant: "yellow" | "purple"
-}
+    justify-content: space-between;
+    background: ${props => props.theme.colors["base-background"]};
+    padding: 2rem 0;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    nav {
+        display: flex;
+        gap: 0.75rem;
+        align-items: center;
+    }
+    `
+    interface HeaderNavigationProps {
+        variant: "yellow" | "purple"
+    }
 
 
 export const HeaderNavigation = styled.button<HeaderNavigationProps>`
@@ -42,4 +46,8 @@ export const HeaderNavigation = styled.button<HeaderNavigationProps>`
                 color: ${theme.colors["brand-purple"]};
             }
         `} 
+
+        a {
+            outline: none;
+        }
 `

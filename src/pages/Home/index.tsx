@@ -1,13 +1,15 @@
-import { HomeContainer, HomeTitle, StatsBox, StatsContainer } from "./styles";
+import { HomeContainer, HomeTitle, StatsContainer } from "./styles";
 
 import { ShoppingCart, Timer, Package, Coffee } from 'phosphor-react'
 
 import home from "../../assets/home.png"
-import { Icon } from "./components/Icons";
 import { HomeCatalog } from "./components/HomeCatalog";
 import { TextRegular } from "../../components/TextStyles";
+import { StatInfoIcon } from "../../components/StatInfoIcon";
+import { useTheme } from "styled-components";
 
 export function Home() {
+    const { colors } = useTheme()
     return (
         <div>
             <HomeContainer>
@@ -18,45 +20,36 @@ export function Home() {
                     <TextRegular size="lg" color="subtitle" as="h3">
                         Com o Coffee Delivery você recebe seu café onde estiver, a <br /> qualquer hora
                     </TextRegular>
-
-                    <StatsBox>
-                        <article>
-                            <div>
-                                <Icon variantColor="yellow-700">
-                                    <ShoppingCart weight="fill" size={16} />
-                                </Icon>
-                                <TextRegular>Compra simples e segura</TextRegular>
-                            </div>
-
-                            <div>
-                                <Icon variantColor="yellow-500">
-                                    <Timer weight="fill" size={16} />
-                                </Icon>
-                                <TextRegular>Entrega rápida e rastreada</TextRegular>
-                            </div>
-                        </article>
-                        <article>
-                            <div>
-                                <Icon variantColor="gray-700">
-                                    <Package weight="fill" size={16} />
-                                </Icon>
-                                <TextRegular>Embalagem mantém o café intacto</TextRegular>
-                            </div>
-
-                            <div>
-                                <Icon variantColor="purple-500">
-                                    <Coffee weight="fill" size={16} />
-                                </Icon>
-                                <TextRegular>O café chega fresquinho até você</TextRegular>
-                            </div>
-                        </article>
-                    </StatsBox>
-
+                    
                     <StatsContainer>
-                        <p>Benefits</p>
-                        <p>Benefits</p>
-                        <p>Benefits</p>
-                        <p>Benefits</p>
+                        <StatInfoIcon 
+                            colorBg={colors["brand-yellow-dark"]} 
+                            icon={<ShoppingCart 
+                                weight="fill" 
+                                size={16} />} 
+                            text="Compra simples e segura" 
+                        />
+                        <StatInfoIcon 
+                            colorBg={colors["base-text"]} 
+                            icon={<Package 
+                                weight="fill" 
+                                size={16} />} 
+                            text="Embalagem mantém o café intacto" 
+                        />
+                        <StatInfoIcon 
+                            colorBg={colors["brand-yellow"]} 
+                            icon={<Timer 
+                                weight="fill" 
+                                size={16} />} 
+                            text="Entrega rápida e rastreada" 
+                        />
+                        <StatInfoIcon 
+                            colorBg={colors["brand-purple"]} 
+                            icon={<Coffee 
+                                weight="fill" 
+                                size={16} />} 
+                            text="O café chega fresquinho até você" 
+                        />
                     </StatsContainer>
                 </div>
                 <img src={home} alt="" />

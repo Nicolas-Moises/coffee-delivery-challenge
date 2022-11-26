@@ -1,12 +1,16 @@
 import { Minus, Plus, ShoppingCart } from "phosphor-react";
 import { useState } from "react";
-import { CardContainer, IncrementOrDecrease, PriceOrder, Tags, ValueCard } from "./styles";
+import { QuantityProductInput } from "../../../../components/QuantityProductInput";
+import { TextRegular, TextTitle } from "../../../../components/TextStyles";
+import { formatValuePrice } from "../../../../utils/FormatValuePrice";
+import { CardContainer, AddOrRemoveContainer, NameCoffee, PriceOrder, Tags, ValueCard } from "./styles";
 
 export interface CardCoffeeProps {
+    id: string;
     content: string;
     name: string;
     img: string;
-    value: string;
+    value: number;
     tags: string[];
 }
 
@@ -14,15 +18,7 @@ export function CardCoffee({ content, name, img, value, tags}:CardCoffeeProps ) 
 
     const [ quantityProducts, setQuantityProducts ] = useState(0);
 
-    function handleIncrementItem() {
-        setQuantityProducts(quantityProducts + 1)
-    }
-
-    function handleDecreaseItem() {
-        if(quantityProducts > 0) {
-            setQuantityProducts(quantityProducts - 1)
-        } return 
-    }
+    const FormattedValue = formatValuePrice(value)
 
     return (
         <CardContainer>
@@ -34,28 +30,23 @@ export function CardCoffee({ content, name, img, value, tags}:CardCoffeeProps ) 
                     )
                 })}
             </Tags>
-            <h3>{name}</h3>
-            <p>{content}</p>
+            <NameCoffee>{name}</NameCoffee>
+            <TextRegular size="sm" color="label">{content}</TextRegular>
             <PriceOrder>
                 <ValueCard>
-                    <p>
+                    <TextRegular size="sm" color="text">
                         R$
-                        <span>
-                            {value}
-                        </span>
-                    </p>
+                    </TextRegular>
+                    <TextTitle size="md" color="text" as="strong">
+                            {FormattedValue}
+                    </TextTitle>
                 </ValueCard>
-                <div>
-                    <IncrementOrDecrease>
-                        <Minus onClick={handleDecreaseItem} size={14} weight='bold' />
-                        <span>{quantityProducts}</span>
-                        <Plus onClick={handleIncrementItem} size={14} weight='bold' />
-                    </IncrementOrDecrease>
-
-                    <button >
-                        <ShoppingCart weight="fill" size={22} />
+                <AddOrRemoveContainer>
+                    <QuantityProductInput />
+                    <button>
+                        <ShoppingCart size={22} weight="fill" />
                     </button>
-                </div>
+                </AddOrRemoveContainer>
             </PriceOrder>
         </CardContainer>
     )

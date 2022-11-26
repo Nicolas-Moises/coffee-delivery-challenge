@@ -20,30 +20,6 @@ export const HomeTitle = styled(TextTitle)`
 `
 
 
-export const StatsBox = styled.section`
-    margin-top: 4.125rem;
-    display: flex;
-    gap: 2.5rem;
-
-    article {
-        display: flex;
-        flex-direction: column;
-        gap: 1.25rem;
-
-        div {
-            display: flex;
-            gap: 0.75rem;
-            align-items: center;
-
-            span {
-                font-size: 1rem;
-
-            }
-        }
-    }
-
-`
-
 export const StatsContainer = styled.div`
     width: 100%;
     display: grid;
